@@ -1,6 +1,7 @@
 import Phaser from 'phaser'
 import StudioScene from './scenes/StudioScene.js'
 import { createEventSocket } from '../src/ws.js'
+import { WORKFLOW_URL } from '../src/api.js'
 import './style.css'
 
 document.querySelector('#app').innerHTML = `
@@ -97,7 +98,7 @@ async function startWorkflow(event) {
     await socket.ensureConnected()
     scene.resetAgentStates()
     note.textContent = 'Starting workflow…'
-    const response = await fetch('http://127.0.0.1:8000/run', {
+    const response = await fetch(WORKFLOW_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ goal, recipient }),
@@ -114,7 +115,7 @@ async function startWorkflow(event) {
     if (busy) note.textContent = 'Workflow running. Follow your team in the office.'
   } catch (error) {
     console.error('[Agent Studio] Workflow request failed:', {
-      url: 'http://127.0.0.1:8000/run',
+      url: WORKFLOW_URL,
       method: 'POST',
       origin: window.location.origin,
       name: error.name,

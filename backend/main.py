@@ -49,11 +49,13 @@ class RunRequest(BaseModel):
 
 
 @app.get("/health")
+@app.get("/api/health")
 async def health() -> dict:
     return {"status": "ok"}
 
 
 @app.post("/run")
+@app.post("/api/run")
 async def run(request: RunRequest) -> dict:
     task = asyncio.create_task(run_workflow(request.goal, request.recipient))
     _tasks.add(task)
@@ -62,6 +64,7 @@ async def run(request: RunRequest) -> dict:
 
 
 @app.websocket("/ws")
+@app.websocket("/api/ws")
 async def websocket_events(websocket: WebSocket) -> None:
     await websocket.accept()
     add_client(websocket)

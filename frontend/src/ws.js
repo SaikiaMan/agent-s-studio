@@ -1,3 +1,5 @@
+import { WS_URL } from './api.js'
+
 const AGENTS = new Set(['researcher', 'writer', 'courier'])
 const TYPES = new Set(['spawn', 'working', 'tool_start', 'tool_end', 'handoff', 'done', 'error'])
 
@@ -26,7 +28,7 @@ export function createEventSocket(onEvent, onStatus = () => {}) {
     onStatus('connecting')
 
     pending = new Promise((resolve, reject) => {
-      const connection = new WebSocket('ws://127.0.0.1:8000/ws')
+      const connection = new WebSocket(WS_URL)
       socket = connection
       const timeout = setTimeout(() => {
         reject(new Error('Timed out connecting to Agent Studio.'))
