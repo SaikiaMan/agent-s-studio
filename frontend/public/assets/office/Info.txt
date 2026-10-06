@@ -1,0 +1,18 @@
+
+Thank you for downloading!
+
+Info:
+32x32 topdown (3/4ish) pixel art asset pack.
+
+This set contains two versions - one aligned so it can be sliced into 16x16 tiles, and one aligned for 32x32.
+
+Both versions contain furniture with/without shadows, interior wall/floor tiles, 16x16 icons, terrain tiles, exterior items and buildings.
+
+This set can be used with my other asset packs: 
+https://0-mem0ry.itch.io/
+
+License : 
+These assets may be used for commercial and non-commercial projects.  Asset pack may be used/modified  - but may not be resold or redistributed. 
+Assets may not be used for AI/nft or AI learning (please do not use these images to train AI models or for Generative AI tools). 
+
+These assets are free forever.  However donations are very welcome, and will help me to one day make pixel art my fulltime job :) 
