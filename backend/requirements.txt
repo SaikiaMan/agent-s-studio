@@ -1,6 +1,10 @@
 fastapi
+pydantic
+starlette
 uvicorn[standard]
+websockets
 python-dotenv
+langchain-openai
 langchain-google-vertexai
 google-cloud-aiplatform
 google-genai
